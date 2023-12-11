@@ -3,16 +3,16 @@
 
 #include "pipeline.h"
 
-int mul_by_2(int x) { return x * 2; } // пример обычной функции
+int mul_by_2(int x) { return x * 2; } // РїСЂРёРјРµСЂ РѕР±С‹С‡РЅРѕР№ С„СѓРЅРєС†РёРё
 
 int main() {
-  using namespace pipeline;         // подключаем namespace
-  std::string str = "Hello World!"; // строка из примера
+  using namespace pipeline;         // РїРѕРґРєР»СЋС‡Р°РµРј namespace
+  std::string str = "Hello World!"; // СЃС‚СЂРѕРєР° РёР· РїСЂРёРјРµСЂР°
   str | std::size<std::string> | to_callable(mul_by_2) | [](auto x) {
     return x * 2;
-  } | [](auto x) { std::cout << x; }; // пример использования пайплайна
+  } | [](auto x) { std::cout << x; }; // РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РїР°Р№РїР»Р°Р№РЅР°
 
   std::cout << std::endl
-            << mul_by_2(7 | to_callable(mul_by_2)) << std::endl; // ещё пример
+            << mul_by_2(7 | to_callable(mul_by_2)) << std::endl; // РµС‰С‘ РїСЂРёРјРµСЂ
 
 }
