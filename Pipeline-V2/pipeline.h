@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PIPELINE_H_
+#define PIPELINE_H_
+
 namespace pipeline {
 
 // оператор, используемый для организации пайплайна. Слева значение, справа
@@ -18,3 +20,5 @@ template <typename T> auto to_callable(T func) {
 }
 
 } // namespace pipeline
+
+#endif // !PIPELINE_H
